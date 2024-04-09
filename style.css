@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+  #game {
+    width: 90%; /* Lebar elemen game */
+    max-width: 600px; /* Lebar maksimal */
+    height: calc(100% - 40px); /* Tinggi berdasarkan konten #game */
+    top: 20px; /* Penyesuaian berdasarkan padding #game */
+    left: 50%; /* Pusatkan wadah ini */
+    background-color: rgba(255, 255, 255, 0.7); /* Warna abu-abu dengan transparansi */
+    backdrop-filter: blur(10px); /* Efek blur latar belakang */
+    -webkit-backdrop-filter: blur(10px); /* Prefix untuk Safari */
+    padding: 20px;
+    margin-bottom: 20px; /* Margin bawah untuk elemen game */
+    border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-attachment: fixed;
+    transition: width 0.3s, box-shadow 0.3s, border-radius 0.3s; /* Smooth transition untuk responsivitas */
+}
+
+h1 {
+    color: #333;
+  z-index: 909;
+}
+
+.dedication {
+    margin: 20px 0;
+    font-style: italic;
+    color: #6a5acd;
+  z-index: 999;
+}
+
+#clue {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button#next {
+    background-color: #f44336;
+}
+
+button#next:hover {
+    background-color: #d32f2f;
+}
+
+#result {
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: #dceaea; /* Warna teks yang kontras dengan latar belakang */
+    border-top: 1px solid #dcdcdc;
+    background-color: rgba(54, 54, 54, 0.8); /* Latar belakang abu-abu hitam transparan */
+    position: fixed; /* Footer tetap di bagian bawah viewport */
+    bottom: 0; /* Menempelkan footer ke bagian bawah */
+    left: 0; /* Menjaga footer agar selalu lebar penuh */
+    z-index: 1000; /* Pastikan footer di atas semua elemen lain */
+}
+
+
+
+@media (max-width: 768px) {
+    #game {
+        width: 100%; /* Lebar elemen game untuk viewport yang lebih kecil */
+        /* Sisa aturan tetap sama */
+    }
+}
+
+@media (max-width: 600px) {
+      #game {
+        width: calc(100% - 30px); /* Atau '100%' jika tidak ada padding di body yang mengganggu */
+        box-shadow: none;
+        border-radius: 16px;
+        margin: 0 auto; /* Menempatkan elemen di tengah secara horizontal */
+        margin-bottom: 0;
+        padding: 15px;
+        /* Menghilangkan top dan left */
+        transform: translateY(0); /* Sesuaikan ini jika perlu */
+        /* Pastikan transform menggantikan left: 50% jika digunakan untuk pusat */
+    }
+  footer {
+      position: fixed; 
+  }
+}
